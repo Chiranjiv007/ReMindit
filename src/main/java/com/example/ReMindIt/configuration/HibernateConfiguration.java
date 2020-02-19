@@ -16,10 +16,10 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@EnableTransactionManagement
 @Configuration
+@PropertySource(value = {"classpath:application.properties"})
+@EnableTransactionManagement
 @ComponentScan({"com.chiranjiv.ReMindIt.configuration"})
-@PropertySource(value = {"classpath: application.properties"})
 public class HibernateConfiguration {
 
     @Autowired
