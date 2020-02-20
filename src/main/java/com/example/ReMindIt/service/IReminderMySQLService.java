@@ -2,10 +2,12 @@ package com.example.ReMindIt.service;
 
 import com.example.ReMindIt.model.Reminder;
 import com.example.ReMindIt.model.User;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public interface IReminderMySQLService {
 
     @Transactional

@@ -1,43 +1,45 @@
 package com.example.ReMindIt.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
-import javax.persistence.Column;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Entity
-@IdClass(CompositeKey.class)
 @Table(name = "Reminders")
 public class Reminder {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne
     @JoinColumn(name = "userName", nullable = false)
-    private String userName;
+    private User user;
 
-    @Id
     @Column(name = "Date_Time", nullable = false)
     private LocalDateTime reminderDateTime;
 
-    @Id
     @Column(name = "ReminderName", nullable = false)
     private String reminderName;
 
     @Column(name = "Description", nullable = false)
     private String description;
 
-    public String getUsername() {
-        return userName;
+    public Long getId() {
+        return id;
     }
 
-    public void setUsername(String userName) {
-        this.userName = userName;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public LocalDateTime getReminderDateTime() {

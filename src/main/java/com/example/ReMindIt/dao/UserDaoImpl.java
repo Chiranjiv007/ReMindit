@@ -5,13 +5,13 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class UserDaoImpl implements UserDao {
+//@Repository
+public class UserDaoImpl {
 
-    @Autowired
+//    @Autowired
     private SessionFactory sessionFactory;
 
-    @Override
+//    @Override
     public User findUserByUsername(String username) {
         return (User) sessionFactory.getCurrentSession().get(User.class, username);
     }

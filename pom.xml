@@ -16,8 +16,6 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<hibernate.version>5.0.1.Final</hibernate.version>
-		<mysql.connector.version>5.1.44</mysql.connector.version>
 	</properties>
 
 	<dependencies>
@@ -46,25 +44,12 @@
 		</dependency>
 
 		<!--	Hibernate	-->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
 
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
-			<scope>runtime</scope>
-		</dependency>
 
 		<!--	MySQL	-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.connector.version}</version>
-			<scope>runtime</scope>
 		</dependency>
 
 

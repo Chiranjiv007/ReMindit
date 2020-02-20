@@ -1,5 +1,7 @@
 package com.example.ReMindIt.model;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.util.Set;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
 public class User {
 
     @Id
-    @Column(name = "username", nullable = false)
+    @Column(name = "userName", nullable = false)
     private String userName;
 
     @Column(name = "First_Name", nullable = false)
@@ -21,7 +23,7 @@ public class User {
     @Column(name = "Password", nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "username")
+    @OneToMany(mappedBy = "user")
     private List<Reminder> reminders;
 
 //    @OneToMany

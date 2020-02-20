@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Service
 public class ReminderMYSQLServiceImpl implements IReminderMySQLService {
@@ -22,7 +24,7 @@ public class ReminderMYSQLServiceImpl implements IReminderMySQLService {
 
     @Override
     public List<Reminder> getAllRemindersOfUser(User user) {
-        return reminderDao.getAllRemindersByUser(user.getUserName());
+        return reminderDao.getAllRemindersByUser(user);
     }
 
     // TODO:
