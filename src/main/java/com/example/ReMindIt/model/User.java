@@ -2,6 +2,7 @@ package com.example.ReMindIt.model;
 
 import javax.persistence.*;
 import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name="User")
@@ -11,17 +12,20 @@ public class User {
     @Column(name = "username", nullable = false)
     private String userName;
 
-    @Column(name = "First Name", nullable = false)
+    @Column(name = "First_Name", nullable = false)
     private String firstName;
 
-    @Column(name = "Last Name")
+    @Column(name = "Last_Name")
     private String lastName;
 
     @Column(name = "Password", nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private Set<Reminder> reminders;
+    @OneToMany(mappedBy = "username")
+    private List<Reminder> reminders;
+
+//    @OneToMany
+//    private List<Role> roles;
 
     public String getUserName() {
         return userName;
@@ -54,5 +58,21 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public List<Reminder> getReminders(){
+        return reminders;
+    }
+
+    public void setReminders(List<Reminder> reminders) {
+        this.reminders = reminders;
+    }
+
+//    public List<Role> getRoles() {
+//        return roles;
+//    }
+//
+//    public void setRoles(List<Role> roles) {
+//        this.roles = roles;
+//    }
 
 }

@@ -8,42 +8,43 @@ import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-@IdClass(CompositeKey.class)
 @Entity
+@IdClass(CompositeKey.class)
 @Table(name = "Reminders")
 public class Reminder {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "username", nullable = false)
-    private User user;
+    @JoinColumn(name = "userName", nullable = false)
+    private String userName;
 
     @Id
-    @Column(name = "Date and Time", nullable = false)
-    private DateTimeFormatter reminderDateTime;
+    @Column(name = "Date_Time", nullable = false)
+    private LocalDateTime reminderDateTime;
 
     @Id
-    @Column(name = "reminderName", nullable = false)
+    @Column(name = "ReminderName", nullable = false)
     private String reminderName;
 
     @Column(name = "Description", nullable = false)
     private String description;
 
-    public User getUser() {
-        return user;
+    public String getUsername() {
+        return userName;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsername(String userName) {
+        this.userName = userName;
     }
 
-    public DateTimeFormatter getReminderDateTime() {
+    public LocalDateTime getReminderDateTime() {
         return reminderDateTime;
     }
 
-    public void setReminderDateTime(DateTimeFormatter reminderDateTime) {
+    public void setReminderDateTime(LocalDateTime reminderDateTime) {
         this.reminderDateTime = reminderDateTime;
     }
 
